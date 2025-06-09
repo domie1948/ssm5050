@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShoujipinpaiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShoujipinpaiEntity" id="shoujipinpaiMap">
+        <result property="pinpai" column="pinpai"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShoujipinpaiVO" >
+		SELECT * FROM shoujipinpai  shoujipinpai         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShoujipinpaiVO" >
+		SELECT  shoujipinpai.* FROM shoujipinpai  shoujipinpai 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShoujipinpaiView" >
+
+		SELECT  shoujipinpai.* FROM shoujipinpai  shoujipinpai 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShoujipinpaiView" >
+		SELECT * FROM shoujipinpai  shoujipinpai <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
